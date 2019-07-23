@@ -1,0 +1,421 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  line-height: 1.5;
+}
+
+.menu-btn {
+  position: fixed;
+  z-index: 102;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.8s ease-in-out;
+}
+
+.menu-btn .menu-btn-line {
+  width: 30px;
+  height: 4px;
+  margin: 0 0 5px 0;
+  background: #000;
+  transition: all 0.8s ease-in-out;
+}
+
+.menu-btn.close {
+  transform: rotate(180deg);
+}
+
+.menu-btn.close .menu-btn-line:nth-child(1) {
+  opacity: 0;
+}
+
+.menu-btn.close .menu-btn-line:nth-child(2) {
+  transform: rotate(180deg);
+  width: 15px;
+  height: 15px;
+  background: #000;
+}
+
+.menu-btn.close .menu-btn-line:nth-child(2):hover {
+  background: #f2aae3;
+}
+
+.menu-btn.close .menu-btn-line:nth-child(3) {
+  opacity: 0;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.95;
+  visibility: hidden;
+  z-index: 101;
+}
+
+.menu.show {
+  visibility: visible;
+}
+
+.menu-showcase,
+.menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu-nav {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  text-decoration: none;
+  list-style: none;
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.8s ease-in-out;
+}
+
+.menu-nav.show {
+  transform: translate3d(0, 0, 0);
+}
+
+.menu-showcase {
+  background: #98e6e6fa;
+  transform: translate3d(0, 100%, 0);
+  transition: all 0.8s ease-in-out;
+}
+
+.menu-showcase.show {
+  transform: translate3d(0, 0, 0);
+}
+
+.menu-showcase .showcase {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 1.7rem;
+  color: #444;
+  align-items: center;
+  align-content: center;
+  line-height: 1.5;
+  padding: 69px;
+  transition: all 0.8s ease-in-out;
+}
+
+.menu .nav-item {
+  transform: translate3d(700px, 0, 0);
+  transition: all 0.8s ease-in-out;
+}
+
+.menu .nav-item.show {
+  transform: translate3d(0, 0, 0);
+}
+
+.menu .nav-item.current > a {
+  color: #5facca;
+}
+
+.menu .nav-link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+
+.menu .nav-link:hover {
+  color: #888;
+}
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.09s;
+}
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.27s;
+}
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.36s;
+}
+
+.nav-item:nth-child(5) {
+  transition-delay: 0.45s;
+}
+
+.part-1 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.6;
+  width: 100%;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+#wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layer .content-wrap {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.layer .content-body {
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.layer img {
+  position: absolute;
+  width: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.layer h1 {
+  font-size: 3rem;
+  font-family: "Shadows Into Light", cursive;
+}
+
+.bottom {
+  background: #eee;
+  z-index: 1;
+}
+
+.bottom .content-body {
+  color: black;
+  right: 5%;
+}
+
+.top {
+  background: linear-gradient(to right, #abf3e5, #adc5f5) no-repeat 0 0 / cover;
+  color: #fff;
+  z-index: 2;
+  width: 50vw;
+}
+
+.top .content-body {
+  left: 5%;
+  color: #fff;
+}
+
+.handle {
+  position: absolute;
+  display: block;
+  z-index: 3;
+}
+
+.skewed .handle {
+  top: 50%;
+  transform: rotate(30deg) translateY(-50%);
+  height: 200%;
+  transform-origin: top;
+}
+
+.skewed .top {
+  transform: skew(-30deg);
+  margin-left: -1000px;
+  width: calc(50vw + 1000px);
+}
+
+.skewed .top .content-wrap {
+  transform: skew(30deg);
+  margin-left: 1000px;
+}
+
+@media screen and (max-width: 320px) {
+  .menu-showcase .showcase {
+    font-size: 1rem;
+  }
+
+  #home .lg-heading {
+    font-size: 1.6rem;
+  }
+
+  .layer .content-body h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .menu-btn {
+    top: 35px;
+  }
+
+  .menu-showcase .showcase {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main#home {
+    margin-top: 10vh;
+  }
+
+  .overlay-panel p,
+  .form-container button {
+    display: none;
+  }
+
+  .form-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .overlay-panel h1 {
+    font-size: 1.5rem;
+    padding-bottom: 30px;
+  }
+
+  .layered {
+    padding: 9px 30px;
+  }
+
+  .content-body h1 {
+    font-size: 2rem;
+  }
+
+  .content-body h2 {
+    font-size: 0.8rem;
+  }
+
+  .part-3 .part-3-left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+
+  .lg-heading {
+    line-height: 1.15;
+  }
+
+  ul.menu-nav,
+  div.menu-showcase {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+
+  ul.menu-nav.show,
+  div.menu-showcase.show {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 1.8rem;
+  }
+
+  .menu-showcase {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  .content {
+    font-size: 1.2rem;
+  }
+
+  .part-1 {
+    font-size: 75%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  #home .lg-heading {
+    font-size: 3.7rem;
+    display: inline-block;
+    padding-top: 15px;
+    padding-right: 15px;
+  }
+
+  .overlay-panel h1 {
+    font-size: 1.6rem;
+  }
+
+  .overlay-panel p {
+    font-size: 1.4rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1171px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-height: 360px) {
+  .menu-nav {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-height: 550px) {
+  .overlay {
+    opacity: 0.9;
+  }
+
+  #home .lg-heading,
+  #home .line,
+  #home .sm-heading,
+  #home .icons {
+    display: none;
+  }
+
+  .menu-nav {
+    width: 100%;
+    height: 100vh;
+    font-size: 1.8rem;
+  }
+
+  .menu-showcase,
+  .color-theme-btn {
+    display: none;
+  }
+
+  .overlay-panel p {
+    display: none;
+  }
+
+  .overlay-panel h1 {
+    font-size: 1.8rem;
+    padding-bottom: 55px;
+  }
+}

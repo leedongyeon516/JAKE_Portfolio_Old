@@ -1,0 +1,149 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeInOut;
+
+  .menu-btn-line {
+    width: 30px;
+    height: 4px;
+    margin: 0 0 5px 0;
+    background: set-theme-color($primary-color);
+    @include easeInOut;
+
+    &.secondary-theme {
+      background: #fff;
+    }
+  }
+
+  &.close {
+    transform: rotate(180deg);
+
+    .menu-btn-line {
+      &:nth-child(1) {
+        opacity: 0;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(180deg);
+        width: 15px;
+        height: 15px;
+        background: set-theme-color($primary-color);
+
+        &:hover {
+          background: #f2aae3;
+        }
+      }
+
+      &:nth-child(3) {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.95;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-showcase,
+  &-nav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-nav {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    @include easeInOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.secondary-theme {
+      background: #444;
+    }
+  }
+
+  &-showcase {
+    background: $tertiary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeInOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .showcase {
+      font-family: "Shadows Into Light", cursive;
+      font-size: 1.5rem;
+      color: #444;
+      align-items: center;
+      align-content: center;
+      line-height: 1.5;
+      padding: 69px;
+      @include easeInOut;
+    }
+
+    &.secondary-theme {
+      background: #fff;
+    }
+  }
+
+  .nav-item {
+    transform: translate3d(700px, 0, 0);
+    @include easeInOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  .secondary-item > a {
+    color: #fff;
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    color: set-theme-color($primary-color);
+    text-decoration: none;
+
+    &:hover {
+      color: #888;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .nav-item:nth-child(#{$i}) {
+    transition-delay: $i * 0.09s;
+  }
+}

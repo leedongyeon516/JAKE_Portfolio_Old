@@ -1,0 +1,122 @@
+@import "config";
+@import "menu";
+@import "mobile";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include backgroundVideo;
+  background: $primary-color;
+  color: set-theme-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+
+  &.lg-heading {
+    font-size: 4.3rem;
+    font-weight: bold;
+    transition: all 1.5s ease-out;
+
+    &:hover {
+      transition: all 1.5s ease-in;
+    }
+  }
+
+  &.sm-heading {
+    font-family: "Shadows Into Light", cursive;
+    margin-bottom: 2rem;
+  }
+
+  &.primary-theme {
+    color: #fff;
+    @include easeInOut;
+  }
+
+  &.secondary-theme {
+    color: rgb(243, 242, 247);
+    @include easeInOut;
+  }
+}
+
+.icons a {
+  font-size: 22px;
+  color: gray;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+
+  .icons {
+    margin-top: 2rem;
+
+    a {
+      padding: 0.5rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeInOut();
+      }
+    }
+  }
+
+  &#home {
+    overflow: hidden;
+
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  height: 0.5px;
+  background-color: gold;
+}
+
+.color-theme-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  bottom: 35px;
+  cursor: pointer;
+  @include easeInOut;
+
+  .primary-color-btn,
+  .secondary-color-btn {
+    width: 15px;
+    height: 15px;
+    margin: 0 0 15px 0;
+  }
+
+  .secondary-color-btn {
+    background: #555;
+
+    &.secondary-theme {
+      background: #fff;
+    }
+  }
+}

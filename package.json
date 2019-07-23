@@ -1,0 +1,14 @@
+{
+  "name": "portfolio_jakelee",
+  "version": "1.0.0",
+  "description": "Jake LEE Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w S_CSS/ -o L/css/ --recursive"
+  },
+  "author": "Dongyeon LEE",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

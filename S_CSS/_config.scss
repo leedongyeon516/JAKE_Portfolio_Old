@@ -1,0 +1,76 @@
+$primary-color: #fff;
+$secondary-color: #5facca;
+$tertiary-color: #98e6e6fa;
+$show-home-video: true;
+$show-video: url(../img/bgv.mp4);
+$background-opacity: 0.95;
+
+@mixin easeInOut {
+  transition: all 0.8s ease-in-out;
+}
+
+@mixin backgroundVideo {
+  @if $show-home-video {
+    &#bgv {
+      background: $show-video;
+      background-attachment: fixed;
+      background-size: cover;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba($primary-color, $background-opacity);
+
+        &.secondary-theme {
+          background: rgba(#222, $background-opacity);
+        }
+      }
+
+      &.overlay-theme {
+        background: rgba(#fff, $background-opacity);
+      }
+    }
+  }
+}
+
+@function set-theme-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin mediaS {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaM {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaL {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaX {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}
+
+@mixin mediaH {
+  @media screen and (max-height: 550px) {
+    @content;
+  }
+}
