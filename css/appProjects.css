@@ -217,9 +217,8 @@ header {
   color: rgb(235, 250, 239);
 }
 
-.main span {
-  color: #222;
-  font-size: 0.9rem;
+.main h2 {
+  padding-left: 15px;
 }
 
 @keyframes bounce {
