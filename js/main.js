@@ -46,3 +46,13 @@ function toggleSecondaryColor() {
   menuShowcase.classList.toggle("secondary-theme");
   menuNav.classList.toggle("secondary-theme");
 }
+
+//
+const noticeXButton = document.querySelector(".x-button");
+const noticeContainer = document.querySelector(".notice-container");
+
+noticeXButton.addEventListener("click", hideNotice);
+
+function hideNotice() {
+  noticeContainer.classList.add("hide");
+}
