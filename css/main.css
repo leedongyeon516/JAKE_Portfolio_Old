@@ -210,7 +210,7 @@
     margin-top: 10vh;
   }
   main .icons i {
-    font-size: 0.9rem;
+    display: none;
   }
   .notice-container {
     width: 100vw;
