@@ -20,7 +20,7 @@ header {
   width: 30px;
   height: 4px;
   margin: 0 0 5px 0;
-  background: #5facca;
+  background: gray;
   transition: all 0.8s ease-in-out;
 }
 
